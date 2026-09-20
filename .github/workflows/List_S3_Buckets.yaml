@@ -8,6 +8,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Grant required OIDC permissions for the entire workflow
+permissions:
+  id-token: write   # Required for requesting the JWT to authenticate with AWS OIDC
+  contents: read    # Required for actions/checkout if you add it later
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
